@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h1>Page 1</h1>
+    <div class="row">
+        @for (product of products; track $index) {
+            @if ($index % 4 == 0) {
+                <div class="row" style="margin-top: 25px;"></div>
+            }
+            <div class="col-md-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div>ProductID  : {{product.id}}</div>
+                        <div>Name       : {{product.name}}</div>
+                        <div>Size       : {{product.size}}</div>
+                        <div>Price      : {{product.price}}</div>
+                        <div>Release    : {{product.releaseDate | date: 'shortDate'}}</div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
